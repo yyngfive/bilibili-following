@@ -1,4 +1,6 @@
 __pycache__
-*.pickle
+*.json
 *.csv
 *.xlsx
+.RData
+.Rhistory

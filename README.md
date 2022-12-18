@@ -10,6 +10,10 @@
 
 `following-results.ipynb`：用来从原始数据中提取需要的部分，保存到表格
 
+`video-info.ipynb`：用来补充UP主的视频分区和播放量等信息
+
+`update.ipynb`：用来以后增加新关注的UP主以及更新原有UP的信息
+
 ## 分析步骤
 
 1. 使用此仓库代码爬取数据
