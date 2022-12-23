@@ -207,6 +207,7 @@ library(formattable)
 df[order(df$view_mean, decreasing = T), ] %>%
     select(name, view_mean, likes_mean, fans, total) %>%
     .[1:10, ] %>%
+    add_column(排名=1:10,.before = "name") %>% 
     gt() %>%
     cols_label(
         name = md("UP主"),
