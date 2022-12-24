@@ -3,6 +3,5 @@ requests
 pandas
 numpy
 tqdm
-matplotlib
-seaborn
 icecream
+dash
