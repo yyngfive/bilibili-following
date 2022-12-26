@@ -1,7 +1,5 @@
 qrcode
 requests
 pandas
-numpy
 tqdm
 icecream
-dash

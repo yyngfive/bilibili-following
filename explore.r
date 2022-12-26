@@ -1,6 +1,16 @@
+if (!require("tidyverse")) {
+    install.packages("tidyverse")
+}
+if (!require("RColorBrewer")) {
+    install.packages("tRColorBrewer")
+}
+if (!require("ggsci")) {
+    install.packages("ggsci")
+}
 library(tidyverse)
 library(RColorBrewer)
 library(ggsci)
+require("tydiverse", "ggsci")
 df <- read.csv("./UPs.csv",
     colClasses = c(
         "uid" = "character",
@@ -62,7 +72,9 @@ num_one <- df %>%
     .[1] - num_two
 num_two
 num_one
-
+if (!require("hrbrthemes")) {
+    install.packages("hrbrthemes")
+}
 library(hrbrthemes)
 
 pie(c(num_one, num_two),
@@ -74,7 +86,9 @@ pie(c(num_one, num_two),
 ggplot(data = two_fields, aes(x = fans_level, fill = fans_level)) +
     geom_bar() +
     scale_fill_npg()
-
+if (!require("treemap")) {
+    install.packages("htreemap")
+}
 library(treemap)
 treemap(
     table(df$single_field) %>%
@@ -117,7 +131,9 @@ ggplot(table(two_fields_56$field) %>%
     ) +
     geom_point(color = "orange", size = 4) +
     theme_ipsum()
-
+if (!require("ggradar")) {
+    install.packages("ggradar")
+}
 library(ggradar)
 
 table_to_radar <- function(table) {
@@ -201,13 +217,19 @@ ggplot(df, aes(x = fans_level, y = view_mean, fill = fans_level)) +
     geom_boxplot() +
     theme_ipsum() +
     scale_fill_npg()
+if (!require("gt")) {
+    install.packages("gt")
+}
+if (!require("gtExtras")) {
+    install.packages("gtExtras")
+}
 library(gt)
 library(gtExtras)
-library(formattable)
+# library(formattable)
 df[order(df$view_mean, decreasing = T), ] %>%
     select(name, view_mean, likes_mean, fans, total) %>%
     .[1:10, ] %>%
-    add_column(排名=1:10,.before = "name") %>% 
+    add_column(排名 = 1:10, .before = "name") %>%
     gt() %>%
     cols_label(
         name = md("UP主"),
@@ -264,6 +286,9 @@ table(df$big_field, df$update) %>%
 
 df %>% filter(big_field == "none")
 
+if (!require("lubridate")) {
+    install.packages("lubridate")
+}
 library(lubridate)
 
 table <- df["time"] %>%

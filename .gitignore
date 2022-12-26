@@ -1,7 +1,9 @@
 __pycache__
+.vscode
 *.json
 *.csv
 *.xlsx
 .RData
 .Rhistory
-index.py
+explore_dev.r
+*.log
